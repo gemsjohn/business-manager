@@ -18,5 +18,7 @@ CREATE TABLE employees (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL, 
     last_name VARCHAR(30) NOT NULL, 
-    employee_id INTEGER
+    employee_id INTEGER,
+    job_id INTEGER,
+    CONSTRAINT job_title FOREIGN KEY (job_id) REFERENCES roles(id) ON DELETE CASCADE
 );
