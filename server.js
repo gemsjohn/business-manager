@@ -7,9 +7,6 @@ const apiRoutes = require('./routes/apiRoutes');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// Initialize inquirer script
-new Tracker().initializeTracker();
-
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -28,6 +25,8 @@ db.connect(err => {
     console.log('Database connected.');
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
+        // Initialize inquirer script
+        new Tracker().initializeTracker();
       });
 });
 
