@@ -5,7 +5,13 @@ const inputCheck = require('../../utils/inputCheck');
 
 // Get all employees
 router.get('/employees', (req, res) => {
-    const sql = `SELECT * FROM employees`;
+    const sql = `SELECT employees.*, department.department_name AS department_name,
+                 roles.job_title AS job_title,
+                 roles.salary AS salary
+                 FROM employees
+                 LEFT JOIN department ON employees.department_id = department.id
+                 LEFT JOIN roles ON employees.job_id = roles.id`;
+                 
 
     db.query(sql, (err, rows) => {
         if (err) {

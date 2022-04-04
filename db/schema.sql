@@ -19,6 +19,10 @@ CREATE TABLE employees (
     first_name VARCHAR(30) NOT NULL, 
     last_name VARCHAR(30) NOT NULL, 
     employee_id INTEGER,
+    department_id INTEGER,
     job_id INTEGER,
-    CONSTRAINT job_title FOREIGN KEY (job_id) REFERENCES roles(id) ON DELETE CASCADE
+    CONSTRAINT employee_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE,
+    CONSTRAINT job_title FOREIGN KEY (job_id) REFERENCES roles(id) ON DELETE CASCADE,
+    CONSTRAINT salary FOREIGN KEY (job_id) REFERENCES roles(id) ON DELETE CASCADE,
+    manager_name VARCHAR(30)
 );
