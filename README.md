@@ -34,3 +34,6 @@ As a business owner I wanted to be able to view and manage the departments, role
 - Express.js
 
 ## Images
+![Example Image](https://github.com/gemsjohn/business-manager/blob/main/assets/Departments.png)
+![Example Image](https://github.com/gemsjohn/business-manager/blob/main/assets/Roles.png)
+![Example Image](https://github.com/gemsjohn/business-manager/blob/main/assets/Employees.png)
